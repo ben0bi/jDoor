@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+<title>jDoor example</title>
+<link rel="stylesheet" type="text/css" href="jdoor/jdoor.css" />
+<link rel="stylesheet" type="text/css" href="jdoor/themes/green.css" />
+</head>
+<body>
+
+<div id="mainscreen" style="position: relative; overflow: hidden; height: 500px; width: 500px; margin: auto; border: 1px solid #FF0; background-color: #33A;"></div>
+
+<center>
+<a href="#" onclick="$('#my_window_id').jdShow();">Show</a> |
+<a href="#" onclick="change();">Change</a> |
+<a href="#" onclick="$('#about_window_id').jdShow();">About</a> |
+<a href="#" onclick="$('#youtube_window').jdShow();">Youtube</a> |
+<a href="#" onclick="$('#jdoor_window_author_credits').jdShow();">Author</a>
+</center>
+
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="  crossorigin="anonymous"></script>
+<script src="jdoor/jdoor.js"></script>
+
+<script>
+	function change()
+	{
+		var oldhtml=$('#my_window_id').jdHTML();
+		alert("Old HTML: "+oldhtml);
+		$('#my_window_id').jdHTML('HELLO, I changed.');
+	}
+	
+	//$.fn.jdoor.defaults.UseCookies=false;
+	$('#mainscreen').jdCreateAuthorCredits();
+	$('#mainscreen').jdCreateWindow('my_window_id', 100,100, 'dyn', -50, "A window", "This is <br />just<br /> a<br /> window. <div style='width:40px; height:40px; background-color: #FA0;'></div>");
+	$('#mainscreen').jdCreateWindow('about_window_id', 200, 200, 'dyn','dyn', "About", "jDoor is This:<br />Windows which you can order in their z-order by clicking.<br />With a top menu to move around.");
+	$('#mainscreen').jdCreateYoutubeWindow('youtube_window', 100,150, 200,'dyn',"Youtube Window", "8Ltr_IkvKmc");
+	// $('#mainscreen').jdHideAllWindows();
+</script>
+
+</body>
