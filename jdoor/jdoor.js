@@ -457,7 +457,7 @@
 	$.fn.jdCreateAuthorCredits = function()
 	{
 		return _jdCreateWindow($(this), 'jdoor_window_author_credits', 'center', 'center', 'dyn','dyn', "", "<div style='margin: 10px;'>jDoor by<br />\
-			<a href='http://ben0bi.homenet.org' target='_new'>Beni Yager</a><br>\
+			<a href='http://github.com/ben0bi' target='_new'>Beni Yager</a><br>\
 			<a href='http://twitter.com/ben0bi' target='new'>@ben0bi</a></div>");
 	};
 	
